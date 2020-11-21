@@ -68,7 +68,7 @@ jobs:
     name: Create Release Notes
     runs-on: ubuntu-latest
     needs: calculate-version
-    if: contains(${{ job.calculate-version.steps.gitversion.branchName }}, 'main')
+    if: contains('${{ job.calculate-version.steps.gitversion.branchName }}', 'main')
     steps:
       - run: |
           echo "Creating release notes for 'main' branch."
