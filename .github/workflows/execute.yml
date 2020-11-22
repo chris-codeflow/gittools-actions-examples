@@ -68,6 +68,12 @@ jobs:
         run: |
           echo "SemVer: $GITVERSION_SEMVER"
 
+      - name: Show GitVersion config
+        uses: gittools/actions/gitversion/execute@v0.9.6
+        with:
+          useConfigFile: true
+          additionalArguments: '/showConfig'
+
   display-semver:
     name: Display Semantic Version
     runs-on: ubuntu-latest

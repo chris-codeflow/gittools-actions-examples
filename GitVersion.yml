@@ -1,0 +1,3 @@
+branches:
+  pull-request:
+    tag: pr
