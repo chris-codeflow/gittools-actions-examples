@@ -75,12 +75,11 @@ jobs:
           additionalArguments: '/showConfig'
 
       - name: Output version to file
-        id: gitversion
         uses: gittools/actions/gitversion/execute@v0.9.8
         with:
           additionalArguments: '/output file /outputfile ./SemVer.json'
 
-      - name: Display version
+      - name: Display version from file
         run: |
           cat ./SemVer.json
 
