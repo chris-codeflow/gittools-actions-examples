@@ -74,12 +74,21 @@ jobs:
           useConfigFile: true
           additionalArguments: '/showConfig'
 
-      - name: Output version to file
+      - name: Output to default output file
+        uses: gittools/actions/gitversion/execute@v0.9.8
+        with:
+          additionalArguments: '/output file'
+
+      - name: Display default output file contents
+        run: |
+          cat ./GitVersion.json
+
+      - name: Output to specified output file
         uses: gittools/actions/gitversion/execute@v0.9.8
         with:
           additionalArguments: '/output file /outputfile ./SemVer.json'
 
-      - name: Display version from file
+      - name: Display specified output file contents
         run: |
           cat ./SemVer.json
 
