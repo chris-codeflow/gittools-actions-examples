@@ -69,10 +69,9 @@ jobs:
           echo "SemVer: $GITVERSION_SEMVER"
 
       - name: Show GitVersion config
-        uses: gittools/actions/gitversion/execute@v0.9.6
+        uses: gittools/actions/gitversion/execute@v0.9.8
         with:
           useConfigFile: true
-          configFilePath: 'GitVersion.yml'
           additionalArguments: '/showConfig'
 
       - name: Output version to file
